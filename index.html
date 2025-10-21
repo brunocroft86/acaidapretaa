@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Açaí da Preta - O Melhor Açaí</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <h1 class="logo">Açaí <span>da Preta</span></h1>
+            <nav>
+                <a href="#menu">Cardápio</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>O sabor que vicia!</h2>
+            <p>Monte seu açaí do seu jeito e peça agora mesmo.</p>
+            <a href="#menu" class="btn btn-primary">Ver Cardápio</a>
+        </div>
+    </section>
+
+    <main id="menu" class="container">
+        <h2>Nosso Cardápio</h2>
+
+        <section class="menu-section">
+            <h3>Especiais da Casa</h3>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <img src="https://via.placeholder.com/300x200?text=Açaí+Banoffe" alt="Açaí Banoffe">
+                    <h4>Açaí Banoffe</h4>
+                    <p>Tamanho único: 500ml. 3 camadas de doce de leite, 2 de chantilly, banana e paçoca.</p>
+                    <div class="card-footer">
+                        <span class="price">R$23,00</span>
+                        <button class="btn add-to-cart" data-name="Açaí Banoffe 500ml" data-price="23.00">Adicionar</button>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="https://via.placeholder.com/300x200?text=Açaí+Negrete" alt="Açaí Negrete">
+                    <h4>Açaí Negrete</h4>
+                    <p>Tamanho único: 500ml. Pedaços de Oreo, borda de Nutella, 2 de creme de ovomaltine e cobertura de chocolate.</p>
+                    <div class="card-footer">
+                        <span class="price">R$23,00</span>
+                        <button class="btn add-to-cart" data-name="Açaí Negrete 500ml" data-price="23.00">Adicionar</button>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="https://via.placeholder.com/300x200?text=Açaí+Nevado" alt="Açaí Nevado">
+                    <h4>Açaí Nevado</h4>
+                    <p>Tamanho único: 500ml. Leite condensado, 2 de leite ninho e 1 de creme de ninho chantilly.</p>
+                    <div class="card-footer">
+                        <span class="price">R$20,00</span>
+                        <button class="btn add-to-cart" data-name="Açaí Nevado 500ml" data-price="20.00">Adicionar</button>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="https://via.placeholder.com/300x200?text=Açaí+Frutal" alt="Açaí Frutal">
+                    <h4>Açaí Frutal</h4>
+                    <p>Tamanho único: 500ml. Leite condensado, 3 frutas e 1 creme (Cupuaçu, Ninho ou Maracujá).</p>
+                    <div class="card-footer">
+                        <span class="price">R$18,00</span>
+                        <button class="btn add-to-cart" data-name="Açaí Frutal 500ml" data-price="18.00">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <h3>Copos Tradicionais (com sorvete)</h3>
+            <div class="menu-grid">
+                <div class="menu-card simple">
+                    <h4>300 ML</h4>
+                    <div class="card-footer">
+                        <span class="price">R$10,00</span>
+                        <button class="btn add-to-cart" data-name="Copo 300 ML" data-price="10.00">Adicionar</button>
+                    </div>
+                </div>
+                 <div class="menu-card simple">
+                    <h4>400 ML</h4>
+                    <div class="card-footer">
+                        <span class="price">R$12,00</span>
+                        <button class="btn add-to-cart" data-name="Copo 400 ML" data-price="12.00">Adicionar</button>
+                    </div>
+                </div>
+                 <div class="menu-card simple">
+                    <h4>500 ML</h4>
+                    <div class="card-footer">
+                        <span class="price">R$14,00</span>
+                        <button class="btn add-to-cart" data-name="Copo 500 ML" data-price="14.00">Adicionar</button>
+                    </div>
+                </div>
+                 <div class="menu-card simple">
+                    <h4>700 ML</h4>
+                    <div class="card-footer">
+                        <span class="price">R$20,00</span>
+                        <button class="btn add-to-cart" data-name="Copo 700 ML" data-price="20.00">Adicionar</button>
+                    </div>
+                </div>
+                <div class="menu-card simple">
+                    <h4>1 Litro</h4>
+                    <div class="card-footer">
+                        <span class="price">R$25,00</span>
+                        <button class="btn add-to-cart" data-name="Copo 1 Litro" data-price="25.00">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <h3>Garrafinhas</h3>
+            <div class="menu-grid">
+                <div class="menu-card simple">
+                    <h4>300 ML</h4>
+                    <div class="card-footer">
+                        <span class="price">R$10,00</span>
+                        <button class="btn add-to-cart" data-name="Garrafinha 300 ML" data-price="10.00">Adicionar</button>
+                    </div>
+                </div>
+                 <div class="menu-card simple">
+                    <h4>500 ML</h4>
+                    <div class="card-footer">
+                        <span class="price">R$16,00</span>
+                        <button class="btn add-to-cart" data-name="Garrafinha 500 ML" data-price="16.00">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <h3>Acompanhamentos (Grátis)</h3>
+            <p>Adicione quantos quiser ao seu copo ou garrafinha!</p>
+            <div class="menu-grid">
+                <div class="menu-card simple">
+                    <h4>Aveia</h4>
+                    <div class="card-footer">
+                        <span class="price free">Grátis</span>
+                        <button class="btn add-to-cart" data-name="Acomp: Aveia" data-price="0.00">Adicionar</button>
+                    </div>
+                </div>
+                <div class="menu-card simple">
+                    <h4>Paçoca</h4>
+                    <div class="card-footer">
+                        <span class="price free">Grátis</span>
+                        <button class="btn add-to-cart" data-name="Acomp: Paçoca" data-price="0.00">Adicionar</button>
+                    </div>
+                </div>
+                <div class="menu-card simple">
+                    <h4>Amendoim</h4>
+                    <div class="card-footer">
+                        <span class="price free">Grátis</span>
+                        <button class="btn add-to-cart" data-name="Acomp: Amendoim" data-price="0.00">Adicionar</button>
+                    </div>
+                </div>
+                <div class="menu-card simple">
+                    <h4>Flocos de Arroz</h4>
+                    <div class="card-footer">
+                        <span class="price free">Grátis</span>
+                        <button class="btn add-to-cart" data-name="Acomp: Flocos de Arroz" data-price="0.00">Adicionar</button>
+                    </div>
+                </div>
+                <div class="menu-card simple">
+                    <h4>Socrilhos</h4>
+                    <div class="card-footer">
+                        <span class="price free">Grátis</span>
+                        <button class="btn add-to-cart" data-name="Acomp: Socrilhos" data-price="0.00">Adicionar</button>
+                    </div>
+                </div>
+                <div class="menu-card simple">
+                    <h4>Socrilhos Colorido</h4>
+                    <div class="card-footer">
+                        <span class="price free">Grátis</span>
+                        <button class="btn add-to-cart" data-name="Acomp: Socrilhos Colorido" data-price="0.00">Adicionar</button>
+                    </div>
+                </div>
+                <div class="menu-card simple">
+                    <h4>Shocooboll</h4>
+                    <div class="card-footer">
+                        <span class="price free">Grátis</span>
+                        <button class="btn add-to-cart" data-name="Acomp: Shocooboll" data-price="0.00">Adicionar</button>
+                    </div>
+                </div>
+                <div class="menu-card simple">
+                    <h4>Leite em Pó</h4>
+                    <div class="card-footer">
+                        <span class="price free">Grátis</span>
+                        <button class="btn add-to-cart" data-name="Acomp: Leite em Pó" data-price="0.00">Adicionar</button>
+                    </div>
+                </div>
+                <div class="menu-card simple">
+                    <h4>Granola</h4>
+                    <div class="card-footer">
+                        <span class="price free">Grátis</span>
+                        <button class="btn add-to-cart" data-name="Acomp: Granola" data-price="0.00">Adicionar</button>
+                    </div>
+                </div>
+                <div class="menu-card simple">
+                    <h4>Granulado</h4>
+                    <div class="card-footer">
+                        <span class="price free">Grátis</span>
+                        <button class="btn add-to-cart" data-name="Acomp: Granulado" data-price="0.00">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="menu-section">
+            <h3>+ Adicionais (Pagos)</h3>
+            <div class="menu-grid">
+                <div class="menu-card simple">
+                    <h4>Nutella</h4>
+                    <div class="card-footer">
+                        <span class="price">R$5,00</span>
+                        <button class="btn add-to-cart" data-name="Adicional: Nutella" data-price="5.00">Adicionar</button>
+                    </div>
+                </div>
+                 <div class="menu-card simple">
+                    <h4>Leite Condensado</h4>
+                    <div class="card-footer">
+                        <span class="price">R$2,00</span>
+                        <button class="btn add-to-cart" data-name="Adicional: Leite Condensado" data-price="2.00">Adicionar</button>
+                    </div>
+                </div>
+                <div class="menu-card simple">
+                    <h4>Pistache</h4>
+                    <div class="card-footer">
+                        <span class="price">R$8,00</span>
+                        <button class="btn add-to-cart" data-name="Adicional: Pistache" data-price="8.00">Adicionar</button>
+                    </div>
+                </div>
+                 <div class="menu-card simple">
+                    <h4>Doce de Leite</h4>
+                    <div class="card-footer">
+                        <span class="price">R$5,00</span>
+                        <button class="btn add-to-cart" data-name="Adicional: Doce de Leite" data-price="5.00">Adicionar</button>
+                    </div>
+                </div>
+                <div class="menu-card simple">
+                    <h4>Creme de Ovomaltine</h4>
+                    <div class="card-footer">
+                        <span class="price">R$5,00</span>
+                        <button class="btn add-to-cart" data-name="Adicional: Ovomaltine" data-price="5.00">Adicionar</button>
+                    </div>
+                </div>
+                 <div class="menu-card simple">
+                    <h4>Chantilly</h4>
+                    <div class="card-footer">
+                        <span class="price">R$3,00</span>
+                        <button class="btn add-to-cart" data-name="Adicional: Chantilly" data-price="3.00">Adicionar</button>
+                    </div>
+                </div>
+                <div class="menu-card simple">
+                    <h4>Fruta (1 Opção)</h4>
+                    <div class="card-footer">
+                        <span class="price">R$3,00</span>
+                        <button class="btn add-to-cart" data-name="Adicional: 1 Fruta" data-price="3.00">Adicionar</button>
+                    </div>
+                </div>
+                 <div class="menu-card simple">
+                    <h4>Frutas (2 ou mais)</h4>
+                    <div class="card-footer">
+                        <span class="price">R$5,00</span>
+                        <button class="btn add-to-cart" data-name="Adicional: 2+ Frutas" data-price="5.00">Adicionar</button>
+                    </div>
+                </div>
+                 <div class="menu-card simple">
+                    <h4>Creme (Ninho)</h4>
+                    <div class="card-footer">
+                        <span class="price">R$3,00</span>
+                        <button class="btn add-to-cart" data-name="Adicional: Creme Ninho" data-price="3.00">Adicionar</button>
+                    </div>
+                </div>
+                 <div class="menu-card simple">
+                    <h4>Creme (Cupuaçu)</h4>
+                    <div class="card-footer">
+                        <span class="price">R$3,00</span>
+                        <button class="btn add-to-cart" data-name="Adicional: Creme Cupuaçu" data-price="3.00">Adicionar</button>
+                    </div>
+                </div>
+                 <div class="menu-card simple">
+                    <h4>Mousse de Maracujá</h4>
+                    <div class="card-footer">
+                        <span class="price">R$3,00</span>
+                        <button class="btn add-to-cart" data-name="Adicional: Mousse Maracujá" data-price="3.00">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+             <p style="margin-top: 1rem; text-align: center;">Frutas disponíveis: Banana, Morango, Uva, Manga.</p>
+        </section>
+
+    </main>
+
+    <footer id="contato" class="main-footer">
+        <div class="container">
+            <p>© 2025 Açaí da Preta. Todos os direitos reservados.</p>
+            <p>Siga-nos: 
+                <a href="#"><i class="fab fa-instagram"></i></a> 
+                <a href="#"><i class="fab fa-facebook"></i></a>
+            </p>
+        </div>
+    </footer>
+
+    <div id="cart-button" class="cart-float">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+    </div>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>Meu Pedido</h2>
+            
+            <div id="cart-items">
+                </div>
+
+            <div class="cart-total">
+                <strong>Total:</strong>
+                <span id="cart-total-price">R$ 0,00</span>
+            </div>
+
+            <hr>
+
+            <h3>Finalizar Pedido</h3>
+            <form id="order-form">
+                <div class="form-group">
+                    <label for="address">Seu Endereço (Rua, N°, Bairro):</label>
+                    <input type="text" id="address" placeholder="Ex: Rua das Flores, 123, Centro" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Forma de Pagamento:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="pay-dinheiro" name="payment" value="Dinheiro" required>
+                        <label for="pay-dinheiro">Dinheiro</label>
+                        
+                        <input type="radio" id="pay-cartao" name="payment" value="Cartão">
+                        <label for="pay-cartao">Cartão (levamos a máquina)</label>
+                        
+                        <input type="radio" id="pay-pix" name="payment" value="Pix">
+                        <label for="pay-pix">Pix (na entrega)</label>
+                    </div>
+                </div>
+
+                <div class="form-group" id="troco-field" style="display: none;">
+                    <label for="troco">Precisa de troco? Para quanto?</label>
+                    <input type="text" id="troco" placeholder="Ex: R$ 50,00">
+                </div>
+
+                <div class="form-group">
+                    <label for="observacoes">Observações (Opcional):</label>
+                    <textarea id="observacoes" placeholder="Ex: Sem banana, ponto do açaí mais mole, etc."></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-full">Enviar Pedido via WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
