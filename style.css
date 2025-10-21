@@ -198,9 +198,6 @@ main#menu h2 {
     color: var(--primary-color);
 }
 
-/* ============================ */
-/* == NOVO ESTILO ADICIONADO == */
-/* ============================ */
 .price.free {
     color: #4caf50; /* Verde para "Grátis" */
 }
@@ -378,17 +375,28 @@ main#menu h2 {
     font-family: 'Nunito', sans-serif;
 }
 
-.radio-group label {
-    display: inline-block;
-    margin-right: 1.5rem;
-    font-weight: normal;
+/* ================================== */
+/* == ESTILO DE PAGAMENTO ATUALIZADO == */
+/* ================================== */
+
+/* Faz a div.radio-group ser o container */
+.radio-group {
+    display: flex;
+    flex-direction: column; /* Coloca as opções em coluna (lista) */
+    gap: 0.8rem; /* Espaçamento entre as opções */
 }
 
-/* ============================ */
-/* == ESTILO ANTIGO REMOVIDO == */
-/* ============================ */
-/* .acompanhamentos-list { ... } foi removido */
+/* Nova classe para cada opção da lista */
+.radio-option {
+    display: flex;
+    align-items: center; /* Alinha o botão e o texto verticalmente */
+}
 
+.radio-group label {
+    font-weight: normal;
+    margin-left: 0.5rem; /* Pequeno_espaço entre o botão e o texto */
+    /* Removemos o display: inline-block e o margin-right: 1.5rem */
+}
 
 /* Animações */
 @keyframes fadeIn {

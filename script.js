@@ -155,8 +155,6 @@ document.addEventListener("DOMContentLoaded", () => {
         let message = "Olá, *Açaí da Preta*! 💜\nGostaria de fazer o seguinte pedido:\n\n";
 
         cart.forEach(item => {
-            // === BUG CORRIGIDO AQUI ===
-            // (Estava item.key, mudei para item.quantity)
             const itemSubtotal = item.price * item.quantity;
             total += itemSubtotal;
             
