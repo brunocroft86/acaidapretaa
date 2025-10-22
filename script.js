@@ -13,7 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const trocoField = document.getElementById("troco-field");
     
     // ----- NÚMERO DE WHATSAPP DA LOJA -----
-    const seuNumeroWhatsApp = "5521978308046"; // Formato internacional (Brasil + DDD + Número)
+    // !! NÚMERO ATUALIZADO !!
+    const seuNumeroWhatsApp = "5521990397502"; // Formato internacional (Brasil + DDD + Número)
 
     // Abrir o modal do carrinho
     cartButton.addEventListener("click", () => {
