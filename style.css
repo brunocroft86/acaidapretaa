@@ -81,7 +81,7 @@ body {
 
 /* Seção Hero (Boas-vindas) */
 .hero {
-    background: linear-gradient(rgba(74, 20, 140, 0.8), rgba(74, 20, 140, 0.8)), url('https://via.placeholder.com/1500x500?text=Açaí+Banner') no-repeat center center/cover;
+    background: linear-gradient(rgba(74, 20, 140, 0.8), rgba(74, 20, 140, 0.8)), url(imagens/4841845.jpg) no-repeat center center/cover;
     color: var(--light-color);
     text-align: center;
     padding: 6rem 0;
