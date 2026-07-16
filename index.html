@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Açaí da Preta - O Melhor Açaí</title>
+    
+    <!-- Meta Tags de SEO e WhatsApp (Open Graph) -->
+    <meta name="description" content="Monte seu açaí do seu jeito e peça agora mesmo pelo WhatsApp! O sabor que vicia.">
+    <meta property="og:title" content="Açaí da Preta - O Melhor Açaí">
+    <meta property="og:description" content="Peça agora nosso açaí delicioso! Entregamos no conforto da sua casa.">
+    <meta property="og:image" content="https://i.imgur.com/logo-acai.jpg">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" href="imagens/logo.ico" type="image/x-icon">
+
+    <style>
+        /* Reset Básico e Variáveis */
+        :root {
+            --primary-color: #4a148c; /* Roxo escuro */
+            --secondary-color: #e00084; /* Pink */
+            --light-color: #ffffff;
+            --dark-color: #333333;
+            --bg-color: #f8f9fa;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Nunito', sans-serif; background-color: var(--bg-color); color: var(--dark-color); line-height: 1.6; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* Header e Topbar */
+        .main-header { background: var(--primary-color); color: var(--light-color); padding: 1rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.15); }
+        .main-header .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .logo { font-weight: 900; font-size: 2rem; display: flex; align-items: center; cursor: pointer; }
+        .logo img { height: 40px; width: 40px; margin-right: 10px; border-radius: 50%; object-fit: cover; border: 2px solid var(--secondary-color); }
+        .logo span { color: var(--secondary-color); }
+
+        /* Sub-Navegação de Categorias Deslizante */
+        .category-nav {
+            background: #fff;
+            padding: 0.8rem 0;
+            position: sticky;
+            top: 72px;
+            z-index: 999;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            white-space: nowrap;
+            justify-content: center;
+        }
+        .category-nav::-webkit-scrollbar { display: none; }
+        .category-nav a {
+            color: var(--primary-color); text-decoration: none; font-weight: 700;
+            padding: 0.5rem 1rem; border-radius: 20px; background: #f0f0f0; transition: all 0.3s; font-size: 0.9rem;
+        }
+        .category-nav a:hover, .category-nav a:active { background: var(--secondary-color); color: #fff; }
+
+        /* Hero Section */
+        .hero { background: linear-gradient(rgba(74, 20, 140, 0.85), rgba(74, 20, 140, 0.85)), url('imagens/4841845.jpg') no-repeat center center/cover; color: var(--light-color); text-align: center; padding: 5rem 1rem; }
+        .hero h2 { font-size: 3rem; font-weight: 900; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .hero p { font-size: 1.25rem; margin-bottom: 2rem; }
+
+        /* Botões Globais */
+        .btn { display: inline-block; background: var(--secondary-color); color: var(--light-color); padding: 0.8rem 1.5rem; border: none; border-radius: 8px; cursor: pointer; text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.3s ease; }
+        .btn:hover { background: #c00070; transform: translateY(-2px); }
+        .btn-full { display: block; width: 100%; text-align: center; padding: 1rem; font-size: 1.1rem; }
+
+        /* Menu / Cardápio */
+        main#menu { padding: 3rem 0; }
+        main#menu h2 { text-align: center; font-size: 2.5rem; font-weight: 900; color: var(--primary-color); margin-bottom: 2rem; }
+        .menu-section { margin-bottom: 4rem; scroll-margin-top: 130px; }
+        .menu-section h3 { font-size: 1.8rem; font-weight: 700; color: var(--dark-color); margin-bottom: 1rem; border-bottom: 3px solid var(--secondary-color); display: inline-block; }
+        .menu-section > p { font-size: 1.1rem; color: #666; margin-bottom: 2rem; }
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        
+        .menu-card { background: var(--light-color); border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); overflow: hidden; display: flex; flex-direction: column; border: 1px solid #eaeaea; transition: transform 0.3s; }
+        .menu-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        
+        .menu-card img { width: 100%; height: 260px; object-fit: contain; background-color: #f4f4f4; padding: 10px 0; }
+        .menu-card h4 { font-size: 1.4rem; padding: 1.2rem 1.2rem 0.5rem; color: var(--primary-color); }
+        .menu-card p { padding: 0 1.2rem 1rem; flex-grow: 1; color: #555; font-size: 0.95rem; }
+        .card-footer { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem; border-top: 1px solid #f0f0f0; background-color: #fafafa; }
+        .price { font-size: 1.3rem; font-weight: 900; color: var(--primary-color); }
+        .price.free { color: #2e7d32; }
+        
+        /* ==================================================== */
+        /* == ESTILO CLEAN PREMIUM PARA ADICIONAIS E COPOS   == */
+        /* ==================================================== */
+        .menu-card.simple { 
+            display: flex;
+            flex-direction: column; 
+            justify-content: space-between; 
+            padding: 1.2rem; 
+            border: 1px solid #e0e0e0; /* Borda suave */
+            border-radius: 12px;
+            background-color: #ffffff;
+            min-height: 110px; 
+            box-shadow: none; /* Tira sombra padrão para ficar flat */
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .menu-card.simple:hover {
+            border-color: var(--secondary-color); /* Acende em rosa ao passar mouse */
+            box-shadow: 0 4px 12px rgba(224, 0, 132, 0.1); /* Leve brilho */
+            transform: none; /* Tira aquele pulo que o card grande tem */
+        }
+
+        .menu-card.simple h4 { 
+            padding: 0; 
+            margin: 0 0 10px 0; 
+            font-size: 1.1rem; 
+            text-align: left;
+            color: var(--dark-color); /* Cor de texto mais sóbria */
+            line-height: 1.3;
+        }
+
+        .menu-card.simple .card-footer { 
+            padding: 0; 
+            background: transparent; 
+            border: none; 
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between; 
+            width: 100%;
+        }
+
+        .menu-card.simple .price {
+            font-size: 1.1rem;
+            color: var(--dark-color); /* Preço escuro para destacar o botão */
+            font-weight: 800;
+        }
+        
+        .menu-card.simple .price.free {
+            color: #2e7d32;
+        }
+
+        /* O SEGREDO DO BOTÃO PREMIUM (Ghost Button) */
+        .menu-card.simple .btn {
+            background: transparent;
+            color: var(--secondary-color);
+            border: 2px solid var(--secondary-color);
+            border-radius: 20px; /* Mais redondinho */
+            padding: 0.4rem 1.2rem;
+            font-size: 0.9rem;
+            box-shadow: none; /* Remove a sombra do botão */
+        }
+
+        .menu-card.simple .btn:hover {
+            background: var(--secondary-color);
+            color: var(--light-color);
+        }
+        /* ==================================================== */
+
+        /* Footer */
+        .main-footer { background: var(--dark-color); color: var(--light-color); text-align: center; padding: 2rem 0; margin-top: 2rem; }
+        .main-footer a { color: var(--secondary-color); margin: 0 0.5rem; font-size: 1.8rem; transition: color 0.3s; }
+
+        /* Carrinho Flutuante */
+        .cart-float { position: fixed; bottom: 30px; right: 30px; background: var(--secondary-color); color: var(--light-color); width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 1.5rem; cursor: pointer; box-shadow: 0 6px 20px rgba(224, 0, 132, 0.4); z-index: 1001; transition: transform 0.3s; }
+        .cart-float:hover { transform: scale(1.1); }
+        #cart-count { position: absolute; top: -2px; right: -2px; background: var(--primary-color); color: var(--light-color); font-size: 0.85rem; font-weight: 900; width: 26px; height: 26px; border-radius: 50%; display: flex; justify-content: center; align-items: center; border: 2px solid var(--bg-color); }
+
+        /* Modal e Itens do Carrinho */
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); backdrop-filter: blur(4px); animation: fadeIn 0.3s ease; }
+        .modal-content { background-color: var(--light-color); margin: 5% auto; padding: 2rem; border-radius: 12px; max-width: 500px; width: 95%; max-height: 90vh; overflow-y: auto; position: relative; }
+        .modal-close { color: #999; position: absolute; top: 1rem; right: 1.5rem; font-size: 2rem; font-weight: bold; cursor: pointer; }
+        .modal-content h2 { text-align: center; color: var(--primary-color); margin-bottom: 1.5rem; }
+        
+        .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 1px solid #eee; }
+        .cart-item-info { flex-grow: 1; padding-right: 10px; }
+        .cart-item-name { font-weight: bold; display: block; margin-bottom: 4px; }
+        .cart-item-price { color: #666; font-size: 0.9rem; }
+        
+        .qty-controls { display: flex; align-items: center; gap: 10px; background: #f4f4f4; border-radius: 20px; padding: 4px 10px; }
+        .qty-btn { background: none; border: none; font-size: 1.2rem; font-weight: bold; color: var(--primary-color); cursor: pointer; width: 25px; text-align: center; }
+        .qty-value { font-weight: bold; font-size: 1rem; }
+
+        .order-totals { background: #fafafa; padding: 15px; border-radius: 8px; margin: 15px 0; border: 1px solid #eee; }
+        .totals-row { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 1rem; color: #555; }
+        .totals-row.final { font-size: 1.4rem; font-weight: 900; color: var(--primary-color); border-top: 2px dashed #ccc; padding-top: 10px; margin-bottom: 0; }
+
+        /* Formulário */
+        .form-group { margin-bottom: 1.2rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 700; font-size: 0.95rem; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.9rem; border: 1px solid #dcdcdc; border-radius: 8px; font-family: 'Nunito'; font-size: 1rem; background-color: #fafafa; }
+        .form-group textarea { resize: vertical; min-height: 80px; }
+        .radio-group { display: flex; flex-direction: column; gap: 0.8rem; background: #fafafa; padding: 1rem; border-radius: 8px; border: 1px solid #dcdcdc; }
+        .radio-option { display: flex; align-items: center; }
+        .radio-group input[type="radio"] { width: 20px; height: 20px; accent-color: var(--secondary-color); }
+        .radio-group label { font-weight: 600; margin-left: 0.8rem; }
+
+        /* Toast Notifications */
+        #toast-container { position: fixed; bottom: 100px; right: 20px; z-index: 9999; display: flex; flex-direction: column; gap: 10px; }
+        .toast { background-color: var(--primary-color); color: white; padding: 12px 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-weight: bold; opacity: 0; transform: translateX(100%); animation: slideInToast 0.4s forwards, fadeOutToast 0.4s 2.5s forwards; display: flex; align-items: center; gap: 10px; }
+        
+        @keyframes slideInToast { to { transform: translateX(0); opacity: 1; } }
+        @keyframes fadeOutToast { to { transform: translateX(100%); opacity: 0; } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* ========================================= */
+        /* == RESPONSIVIDADE COMPACTA (MOBILE)    == */
+        /* ========================================= */
+
+        @media (max-width: 768px) {
+            .hero h2 { font-size: 2.2rem; }
+            .category-nav { justify-content: flex-start; padding-left: 20px; padding-right: 20px; }
+        }
+
+        @media (max-width: 480px) {
+            .main-header { padding: 0.6rem 0; }
+            .main-header .container { flex-direction: row; justify-content: center; }
+            .logo { font-size: 1.5rem; }
+            .logo img { height: 32px; width: 32px; margin-right: 8px; }
+            
+            .category-nav { top: 57px; padding: 0.6rem 10px; gap: 8px; }
+            .category-nav a { padding: 0.4rem 0.8rem; font-size: 0.85rem; }
+
+            .hero { padding: 2.5rem 1rem; }
+            .hero h2 { font-size: 1.6rem; margin-bottom: 0.5rem; }
+            .hero p { font-size: 1rem; margin-bottom: 1.5rem; }
+            .btn-primary { padding: 0.6rem 1.2rem; font-size: 0.95rem; }
+
+            main#menu { padding: 1.5rem 0; }
+            main#menu h2 { font-size: 1.8rem; margin-bottom: 1.5rem; }
+            .menu-section { margin-bottom: 2.5rem; scroll-margin-top: 110px; }
+            .menu-section h3 { font-size: 1.3rem; margin-bottom: 0.8rem; }
+            .menu-section > p { font-size: 0.9rem; margin-bottom: 1.2rem; }
+
+            .menu-grid { grid-template-columns: 1fr; gap: 1rem; }
+            
+            .menu-card img { 
+                height: 240px; 
+                object-fit: contain; 
+                background-color: #f4f4f4; 
+                padding: 10px; 
+                border-bottom: 1px solid #eaeaea;
+            } 
+            
+            .menu-card h4 { font-size: 1.15rem; padding: 0.8rem 0.8rem 0.3rem; }
+            .menu-card p { font-size: 0.85rem; padding: 0 0.8rem 0.6rem; margin-bottom: 0; line-height: 1.4; }
+            .card-footer { padding: 0.8rem; }
+            .price { font-size: 1.1rem; }
+            .btn { padding: 0.5rem 0.8rem; font-size: 0.9rem; }
+
+            #copos .menu-grid, 
+            #garrafinhas .menu-grid, 
+            #acompanhamentos .menu-grid, 
+            #adicionais .menu-grid {
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 0.8rem;
+            }
+
+            /* Layout Mobile para os Cards Simples (Ajustado) */
+            .menu-card.simple { 
+                padding: 0.8rem; 
+                border: 1px solid #e0e0e0; /* Borda fininha */
+                min-height: auto;
+                border-radius: 8px;
+            }
+            .menu-card.simple h4 { 
+                font-size: 0.95rem; 
+                margin-bottom: 0.5rem;
+            }
+            .menu-card.simple .card-footer { 
+                flex-direction: column; 
+                gap: 8px; 
+                align-items: stretch; /* Estica o botão */
+            }
+            .menu-card.simple .price { font-size: 1rem; text-align: left; }
+            
+            /* No celular, é melhor o botão voltar a ser preenchido para ter destaque na tela pequena */
+            .menu-card.simple .btn { 
+                background: var(--secondary-color);
+                color: white;
+                width: 100%; 
+                text-align: center; 
+                padding: 0.6rem; 
+                font-size: 0.85rem; 
+                border-radius: 8px; 
+            }
+
+            .modal-content { margin: 5% auto; padding: 1.2rem; width: 95%; border-radius: 8px; }
+            .modal-content h2 { font-size: 1.4rem; margin-bottom: 1rem; }
+            .modal-close { top: 0.8rem; right: 1rem; font-size: 1.8rem; }
+            .cart-item { flex-direction: column; align-items: flex-start; gap: 8px; padding: 0.8rem 0; }
+            .cart-item-name { font-size: 0.95rem; }
+            .qty-controls { align-self: flex-end; padding: 2px 8px; }
+            
+            .form-group label { font-size: 0.85rem; }
+            .form-group input, .form-group textarea, .form-group select { padding: 0.7rem; font-size: 0.9rem; }
+            .radio-group { padding: 0.8rem; }
+            .radio-group input[type="radio"] { width: 18px; height: 18px; }
+            .radio-group label { font-size: 0.9rem; }
+
+            .cart-float { bottom: 15px; right: 15px; width: 55px; height: 55px; font-size: 1.3rem; }
+            #cart-count { width: 22px; height: 22px; font-size: 0.75rem; }
+            
+            .toast { font-size: 0.85rem; padding: 10px 15px; }
+            #toast-container { bottom: 85px; right: 10px; left: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <h1 class="logo">
+                <img src="imagens/logo.png" alt="Logo Açaí da Preta" loading="lazy"> Açaí&nbsp;<span>da Preta</span>
+            </h1>
+        </div>
+    </header>
+
+    <nav class="category-nav">
+        <a href="#especiais">Especiais</a>
+        <a href="#copos">Copos</a>
+        <a href="#garrafinhas">Garrafinhas</a>
+        <a href="#acompanhamentos">Acompanhamentos</a>
+        <a href="#adicionais">Adicionais</a>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h2>O sabor que vicia!</h2>
+            <p>Monte seu açaí do seu jeito e peça agora mesmo.</p>
+            <a href="#especiais" class="btn btn-primary" style="width: auto;">Fazer Pedido</a>
+        </div>
+    </section>
+
+    <main id="menu" class="container">
+        
+        <section id="especiais" class="menu-section">
+            <h3>Especiais da Casa</h3>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <img src="imagens/banoffee.webp" alt="Açaí Banoffe" loading="lazy">
+                    <h4>Açaí Banoffe</h4>
+                    <p>Tamanho único: 500ml. 3 camadas de doce de leite, 2 de chantilly, banana e paçoca.</p>
+                    <div class="card-footer">
+                        <span class="price">R$ 23,00</span>
+                        <button class="btn add-to-cart" data-name="Açaí Banoffe 500ml" data-price="23.00" data-type="principal">Adicionar</button>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="imagens/negrete.webp" alt="Açaí Negrete" loading="lazy">
+                    <h4>Açaí Negrete</h4>
+                    <p>Tamanho único: 500ml. Pedaços de Oreo, borda de Nutella, 2 de creme de ovomaltine e cobertura de chocolate.</p>
+                    <div class="card-footer">
+                        <span class="price">R$ 23,00</span>
+                        <button class="btn add-to-cart" data-name="Açaí Negrete 500ml" data-price="23.00" data-type="principal">Adicionar</button>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="imagens/nevado.webp" alt="Açaí Nevado" loading="lazy">
+                    <h4>Açaí Nevado</h4>
+                    <p>Tamanho único: 500ml. Leite condensado, 2 de leite ninho e 1 de creme de ninho chantilly.</p>
+                    <div class="card-footer">
+                        <span class="price">R$ 20,00</span>
+                        <button class="btn add-to-cart" data-name="Açaí Nevado 500ml" data-price="20.00" data-type="principal">Adicionar</button>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="imagens/frutal.webp" alt="Açaí Frutal" loading="lazy">
+                    <h4>Açaí Frutal</h4>
+                    <p>Tamanho único: 500ml. Leite condensado, 3 frutas e 1 creme (Cupuaçu, Ninho ou Maracujá).</p>
+                    <div class="card-footer">
+                        <span class="price">R$ 18,00</span>
+                        <button class="btn add-to-cart" data-name="Açaí Frutal 500ml" data-price="18.00" data-type="principal">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="copos" class="menu-section">
+            <h3>Copos Tradicionais (com sorvete)</h3>
+            <div class="menu-grid">
+                <div class="menu-card simple"> 
+                    <h4>300 ML</h4>
+                    <div class="card-footer">
+                        <span class="price">R$ 10,00</span>
+                        <button class="btn add-to-cart" data-name="Copo 300 ML" data-price="10.00" data-type="principal">Adicionar</button>
+                    </div>
+                </div>
+                 <div class="menu-card simple">
+                    <h4>400 ML</h4>
+                    <div class="card-footer">
+                        <span class="price">R$ 12,00</span>
+                        <button class="btn add-to-cart" data-name="Copo 400 ML" data-price="12.00" data-type="principal">Adicionar</button>
+                    </div>
+                </div>
+                 <div class="menu-card simple">
+                    <h4>500 ML</h4>
+                    <div class="card-footer">
+                        <span class="price">R$ 14,00</span>
+                        <button class="btn add-to-cart" data-name="Copo 500 ML" data-price="14.00" data-type="principal">Adicionar</button>
+                    </div>
+                </div>
+                 <div class="menu-card simple">
+                    <h4>700 ML</h4>
+                    <div class="card-footer">
+                        <span class="price">R$ 20,00</span>
+                        <button class="btn add-to-cart" data-name="Copo 700 ML" data-price="20.00" data-type="principal">Adicionar</button>
+                    </div>
+                </div>
+                <div class="menu-card simple">
+                    <h4>1 Litro</h4>
+                    <div class="card-footer">
+                        <span class="price">R$ 25,00</span>
+                        <button class="btn add-to-cart" data-name="Copo 1 Litro" data-price="25.00" data-type="principal">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="garrafinhas" class="menu-section">
+            <h3>Garrafinhas</h3>
+            <div class="menu-grid">
+                <div class="menu-card simple"> 
+                    <h4>300 ML</h4>
+                    <div class="card-footer">
+                        <span class="price">R$ 10,00</span>
+                        <button class="btn add-to-cart" data-name="Garrafinha 300 ML" data-price="10.00" data-type="principal">Adicionar</button>
+                    </div>
+                </div>
+                 <div class="menu-card simple">
+                    <h4>500 ML</h4>
+                    <div class="card-footer">
+                        <span class="price">R$ 16,00</span>
+                        <button class="btn add-to-cart" data-name="Garrafinha 500 ML" data-price="16.00" data-type="principal">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="acompanhamentos" class="menu-section">
+            <h3>Acompanhamentos</h3>
+            <p><strong>Atenção:</strong> Você tem direito a <strong>4 acompanhamentos grátis</strong> por pedido. A partir do 5º, será cobrado R$ 2,00 por item.</p>
+            <div class="menu-grid">
+                <div class="menu-card simple"><h4>Aveia</h4><div class="card-footer"><span class="price free">Grátis*</span><button class="btn add-to-cart" data-name="Acomp: Aveia" data-price="0.00" data-type="free">Adicionar</button></div></div>
+                <div class="menu-card simple"><h4>Paçoca</h4><div class="card-footer"><span class="price free">Grátis*</span><button class="btn add-to-cart" data-name="Acomp: Paçoca" data-price="0.00" data-type="free">Adicionar</button></div></div>
+                <div class="menu-card simple"><h4>Amendoim</h4><div class="card-footer"><span class="price free">Grátis*</span><button class="btn add-to-cart" data-name="Acomp: Amendoim" data-price="0.00" data-type="free">Adicionar</button></div></div>
+                <div class="menu-card simple"><h4>Flocos de Arroz</h4><div class="card-footer"><span class="price free">Grátis*</span><button class="btn add-to-cart" data-name="Acomp: Flocos de Arroz" data-price="0.00" data-type="free">Adicionar</button></div></div>
+                <div class="menu-card simple"><h4>Socrilhos</h4><div class="card-footer"><span class="price free">Grátis*</span><button class="btn add-to-cart" data-name="Acomp: Socrilhos" data-price="0.00" data-type="free">Adicionar</button></div></div>
+                <div class="menu-card simple"><h4>Socrilhos Colorido</h4><div class="card-footer"><span class="price free">Grátis*</span><button class="btn add-to-cart" data-name="Acomp: Socrilhos Colorido" data-price="0.00" data-type="free">Adicionar</button></div></div>
+                <div class="menu-card simple"><h4>Shocooboll</h4><div class="card-footer"><span class="price free">Grátis*</span><button class="btn add-to-cart" data-name="Acomp: Shocooboll" data-price="0.00" data-type="free">Adicionar</button></div></div>
+                <div class="menu-card simple"><h4>Leite em Pó</h4><div class="card-footer"><span class="price free">Grátis*</span><button class="btn add-to-cart" data-name="Acomp: Leite em Pó" data-price="0.00" data-type="free">Adicionar</button></div></div>
+                <div class="menu-card simple"><h4>Granola</h4><div class="card-footer"><span class="price free">Grátis*</span><button class="btn add-to-cart" data-name="Acomp: Granola" data-price="0.00" data-type="free">Adicionar</button></div></div>
+                <div class="menu-card simple"><h4>Granulado</h4><div class="card-footer"><span class="price free">Grátis*</span><button class="btn add-to-cart" data-name="Acomp: Granulado" data-price="0.00" data-type="free">Adicionar</button></div></div>
+            </div>
+        </section>
+
+        <section id="adicionais" class="menu-section">
+            <h3>+ Adicionais Especiais</h3>
+            <div class="menu-grid">
+                <div class="menu-card simple"><h4>Nutella</h4><div class="card-footer"><span class="price">R$ 5,00</span><button class="btn add-to-cart" data-name="Adicional: Nutella" data-price="5.00" data-type="paid">Adicionar</button></div></div>
+                <div class="menu-card simple"><h4>Leite Condensado</h4><div class="card-footer"><span class="price">R$ 2,00</span><button class="btn add-to-cart" data-name="Adicional: Leite Condensado" data-price="2.00" data-type="paid">Adicionar</button></div></div>
+                <div class="menu-card simple"><h4>Pistache</h4><div class="card-footer"><span class="price">R$ 8,00</span><button class="btn add-to-cart" data-name="Adicional: Pistache" data-price="8.00" data-type="paid">Adicionar</button></div></div>
+                <div class="menu-card simple"><h4>Doce de Leite</h4><div class="card-footer"><span class="price">R$ 5,00</span><button class="btn add-to-cart" data-name="Adicional: Doce de Leite" data-price="5.00" data-type="paid">Adicionar</button></div></div>
+                <div class="menu-card simple"><h4>Creme de Ovomaltine</h4><div class="card-footer"><span class="price">R$ 5,00</span><button class="btn add-to-cart" data-name="Adicional: Ovomaltine" data-price="5.00" data-type="paid">Adicionar</button></div></div>
+                <div class="menu-card simple"><h4>Chantilly</h4><div class="card-footer"><span class="price">R$ 3,00</span><button class="btn add-to-cart" data-name="Adicional: Chantilly" data-price="3.00" data-type="paid">Adicionar</button></div></div>
+                <div class="menu-card simple"><h4>Fruta (1 Opção)</h4><div class="card-footer"><span class="price">R$ 3,00</span><button class="btn add-to-cart" data-name="Adicional: 1 Fruta" data-price="3.00" data-type="paid">Adicionar</button></div></div>
+                <div class="menu-card simple"><h4>Frutas (2 ou mais)</h4><div class="card-footer"><span class="price">R$ 5,00</span><button class="btn add-to-cart" data-name="Adicional: 2+ Frutas" data-price="5.00" data-type="paid">Adicionar</button></div></div>
+                <div class="menu-card simple"><h4>Creme (Ninho)</h4><div class="card-footer"><span class="price">R$ 3,00</span><button class="btn add-to-cart" data-name="Adicional: Creme Ninho" data-price="3.00" data-type="paid">Adicionar</button></div></div>
+                <div class="menu-card simple"><h4>Creme (Cupuaçu)</h4><div class="card-footer"><span class="price">R$ 3,00</span><button class="btn add-to-cart" data-name="Adicional: Creme Cupuaçu" data-price="3.00" data-type="paid">Adicionar</button></div></div>
+                <div class="menu-card simple"><h4>Mousse de Maracujá</h4><div class="card-footer"><span class="price">R$ 3,00</span><button class="btn add-to-cart" data-name="Adicional: Mousse Maracujá" data-price="3.00" data-type="paid">Adicionar</button></div></div>
+            </div>
+             <p style="margin-top: 1.5rem; text-align: center; color: var(--primary-color); font-weight: 700;">Frutas disponíveis: Banana, Morango, Uva, Manga.</p>
+        </section>
+
+    </main>
+
+    <footer id="contato" class="main-footer">
+        <div class="container">
+            <p>© 2026 Açaí da Preta. Todos os direitos reservados.</p>
+            <p style="margin-top: 10px;">Siga-nos: 
+                <a href="https://www.instagram.com/acaidapretaoficial" target="_blank"><i class="fab fa-instagram"></i></a> 
+                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante -->
+    <div id="cart-button" class="cart-float" title="Ver Carrinho">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+    </div>
+
+    <!-- Container para os Avisos (Toasts) -->
+    <div id="toast-container"></div>
+
+    <!-- Modal do Carrinho -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" title="Fechar">&times;</span>
+            <h2>Seu Carrinho</h2>
+            
+            <div id="cart-items"></div>
+
+            <div class="order-totals">
+                <div class="totals-row">
+                    <span>Subtotal:</span>
+                    <span id="cart-subtotal">R$ 0,00</span>
+                </div>
+                <div class="totals-row">
+                    <span>Taxa de Entrega:</span>
+                    <span id="cart-delivery-fee">R$ 0,00</span>
+                </div>
+                <div class="totals-row final">
+                    <span>Total:</span>
+                    <span id="cart-total-price">R$ 0,00</span>
+                </div>
+            </div>
+
+            <form id="order-form">
+                <div class="form-group">
+                    <label for="address">Endereço Completo (Rua, Nº, Compl):</label>
+                    <input type="text" id="address" placeholder="Ex: Rua das Flores, 123, Apto 2" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="bairro">Bairro (Taxa de Entrega):</label>
+                    <select id="bairro" required>
+                        <option value="" data-taxa="0">Selecione seu bairro...</option>
+                        <option value="Centro" data-taxa="3.00">Centro - R$ 3,00</option>
+                        <option value="Bairro A" data-taxa="5.00">Bairro A - R$ 5,00</option>
+                        <option value="Bairro B" data-taxa="7.00">Bairro B - R$ 7,00</option>
+                        <option value="Retirar no Local" data-taxa="0.00">Retirar no Local - Grátis</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Forma de Pagamento:</label>
+                    <div class="radio-group">
+                        <div class="radio-option"> 
+                            <input type="radio" id="pay-dinheiro" name="payment" value="Dinheiro" required>
+                            <label for="pay-dinheiro">Dinheiro</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="pay-cartao" name="payment" value="Cartão">
+                            <label for="pay-cartao">Cartão (levamos a máquina)</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="pay-pix" name="payment" value="Pix">
+                            <label for="pay-pix">Pix (na entrega)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group" id="troco-field" style="display: none;">
+                    <label for="troco">Troco para quanto? (Deixe em branco se não precisar)</label>
+                    <input type="text" id="troco" placeholder="Ex: R$ 50,00">
+                </div>
+
+                <div class="form-group">
+                    <label for="observacoes">Observações ou Nome:</label>
+                    <textarea id="observacoes" placeholder="Ex: Tirar a banana, Nome do cliente..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-full"><i class="fab fa-whatsapp"></i> Finalizar Pedido</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let cart = JSON.parse(localStorage.getItem('cartAcaidaPreta')) || [];
+            
+            const cartButton = document.getElementById("cart-button");
+            const cartModal = document.getElementById("cart-modal");
+            const modalClose = document.querySelector(".modal-close");
+            const cartItemsContainer = document.getElementById("cart-items");
+            const cartCount = document.getElementById("cart-count");
+            
+            const subtotalDisplay = document.getElementById("cart-subtotal");
+            const deliveryDisplay = document.getElementById("cart-delivery-fee");
+            const totalDisplay = document.getElementById("cart-total-price");
+            
+            const orderForm = document.getElementById("order-form");
+            const paymentRadios = document.querySelectorAll('input[name="payment"]');
+            const trocoField = document.getElementById("troco-field");
+            const trocoInput = document.getElementById("troco");
+            const bairroSelect = document.getElementById("bairro");
+            const toastContainer = document.getElementById("toast-container");
+            
+            const seuNumeroWhatsApp = "5521990397502";
+            const MAX_FREE_ADDONS = 4;
+            const EXTRA_ADDON_PRICE = 2.00;
+
+            let deliveryFee = 0;
+
+            updateCartModal();
+
+            function saveCart() {
+                localStorage.setItem('cartAcaidaPreta', JSON.stringify(cart));
+            }
+
+            function showToast(message, icon = "fa-check-circle") {
+                const toast = document.createElement("div");
+                toast.classList.add("toast");
+                toast.innerHTML = `<i class="fas ${icon}"></i> <span>${message}</span>`;
+                toastContainer.appendChild(toast);
+                
+                setTimeout(() => { toast.remove(); }, 3000);
+            }
+
+            trocoInput.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, "");
+                if (value === "") { e.target.value = ""; return; }
+                value = (parseInt(value) / 100).toFixed(2) + "";
+                value = value.replace(".", ",");
+                value = value.replace(/(\d)(\d{3})(\d{3}),/g, "$1.$2.$3,");
+                value = value.replace(/(\d)(\d{3}),/g, "$1.$2,");
+                e.target.value = "R$ " + value;
+            });
+
+            bairroSelect.addEventListener("change", (e) => {
+                const selectedOption = e.target.options[e.target.selectedIndex];
+                deliveryFee = parseFloat(selectedOption.dataset.taxa) || 0;
+                updateCartModal();
+            });
+
+            cartButton.addEventListener("click", () => {
+                updateCartModal();
+                cartModal.style.display = "block";
+                document.body.style.overflow = "hidden"; 
+            });
+            modalClose.addEventListener("click", () => {
+                cartModal.style.display = "none";
+                document.body.style.overflow = "auto";
+            });
+            window.addEventListener("click", (e) => {
+                if (e.target === cartModal) {
+                    cartModal.style.display = "none";
+                    document.body.style.overflow = "auto";
+                }
+            });
+
+            function getFreeAddonsCount() {
+                return cart.filter(item => item.type === "free").reduce((sum, item) => sum + item.quantity, 0);
+            }
+
+            document.querySelectorAll(".add-to-cart").forEach(button => {
+                button.addEventListener("click", (event) => {
+                    let name = event.target.dataset.name;
+                    let price = parseFloat(event.target.dataset.price);
+                    let type = event.target.dataset.type;
+                    
+                    if (type === "free") {
+                        const currentFree = getFreeAddonsCount();
+                        if (currentFree >= MAX_FREE_ADDONS) {
+                            price = EXTRA_ADDON_PRICE; 
+                            name = name + " (Extra)";
+                            type = "paid"; 
+                            showToast(`Limite grátis atingido. Adicionado por R$ 2,00`, "fa-info-circle");
+                        } else {
+                            showToast(`${name} adicionado! (${currentFree + 1}/${MAX_FREE_ADDONS} Grátis)`);
+                        }
+                    } else {
+                        showToast(`${name} adicionado ao carrinho!`);
+                    }
+                    
+                    const existingItem = cart.find(item => item.name === name);
+                    if (existingItem) {
+                        existingItem.quantity++;
+                    } else {
+                        cart.push({ name, price, quantity: 1, type });
+                    }
+
+                    saveCart();
+                    updateCartCount();
+                });
+            });
+
+            function updateCartCount() {
+                const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+                cartCount.innerText = totalItems;
+                cartButton.style.transform = "scale(1.2)";
+                setTimeout(() => cartButton.style.transform = "scale(1)", 200);
+            }
+
+            function updateCartModal() {
+                cartItemsContainer.innerHTML = "";
+                let subtotal = 0;
+
+                if (cart.length === 0) {
+                    cartItemsContainer.innerHTML = "<p style='text-align:center; color:#666;'>Seu carrinho está vazio.</p>";
+                    subtotalDisplay.innerText = "R$ 0,00";
+                    deliveryDisplay.innerText = `R$ ${deliveryFee.toFixed(2).replace('.', ',')}`;
+                    totalDisplay.innerText = `R$ ${deliveryFee.toFixed(2).replace('.', ',')}`;
+                    updateCartCount();
+                    return;
+                }
+
+                cart.forEach((item, index) => {
+                    subtotal += item.price * item.quantity;
+                    
+                    const itemPriceDisplay = item.price === 0 ? "Grátis" : `R$ ${item.price.toFixed(2).replace('.', ',')} un`;
+                    
+                    const itemEl = document.createElement("div");
+                    itemEl.classList.add("cart-item");
+                    itemEl.innerHTML = `
+                        <div class="cart-item-info">
+                            <span class="cart-item-name">${item.name}</span>
+                            <span class="cart-item-price">${itemPriceDisplay}</span>
+                        </div>
+                        <div class="qty-controls">
+                            <button class="qty-btn minus" data-index="${index}">-</button>
+                            <span class="qty-value">${item.quantity}</span>
+                            <button class="qty-btn plus" data-index="${index}">+</button>
+                        </div>
+                    `;
+                    cartItemsContainer.appendChild(itemEl);
+                });
+
+                const total = subtotal + deliveryFee;
+                
+                subtotalDisplay.innerText = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+                deliveryDisplay.innerText = `R$ ${deliveryFee.toFixed(2).replace('.', ',')}`;
+                totalDisplay.innerText = `R$ ${total.toFixed(2).replace('.', ',')}`;
+                
+                document.querySelectorAll(".qty-btn.plus").forEach(btn => {
+                    btn.addEventListener("click", (e) => {
+                        const idx = parseInt(e.target.dataset.index);
+                        
+                        if(cart[idx].type === "free" && getFreeAddonsCount() >= MAX_FREE_ADDONS) {
+                            showToast("Limite de 4 itens grátis já atingido!", "fa-exclamation-triangle");
+                            return;
+                        }
+                        
+                        cart[idx].quantity++;
+                        saveCart();
+                        updateCartModal();
+                    });
+                });
+
+                document.querySelectorAll(".qty-btn.minus").forEach(btn => {
+                    btn.addEventListener("click", (e) => {
+                        const idx = parseInt(e.target.dataset.index);
+                        if (cart[idx].quantity > 1) {
+                            cart[idx].quantity--;
+                        } else {
+                            cart.splice(idx, 1);
+                        }
+                        saveCart();
+                        updateCartModal();
+                    });
+                });
+                
+                updateCartCount();
+            }
+
+            paymentRadios.forEach(radio => {
+                radio.addEventListener("change", (event) => {
+                    trocoField.style.display = event.target.value === "Dinheiro" ? "block" : "none";
+                    if(event.target.value !== "Dinheiro") trocoInput.value = "";
+                });
+            });
+
+            orderForm.addEventListener("submit", (event) => {
+                event.preventDefault();
+
+                if (cart.length === 0) {
+                    showToast("Seu carrinho está vazio!", "fa-exclamation-triangle");
+                    return;
+                }
+                
+                if (!bairroSelect.value) {
+                    showToast("Por favor, selecione um bairro para entrega.", "fa-exclamation-triangle");
+                    return;
+                }
+
+                const address = document.getElementById("address").value.trim();
+                const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
+                const troco = trocoInput.value.trim();
+                const observacoes = document.getElementById("observacoes").value.trim();
+                const bairroNome = bairroSelect.options[bairroSelect.selectedIndex].text;
+                
+                let subtotal = 0;
+                let message = "Olá, *Açaí da Preta*! 💜\nGostaria de fazer o seguinte pedido:\n\n";
+
+                cart.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+                    subtotal += itemTotal;
+                    const priceDisp = item.price === 0 ? "Grátis" : `R$ ${itemTotal.toFixed(2).replace('.', ',')}`;
+                    message += `*${item.quantity}x* ${item.name} - ${priceDisp}\n`;
+                });
+
+                const totalPedido = subtotal + deliveryFee;
+
+                message += "\n----------------------------\n";
+                message += `*Subtotal:* R$ ${subtotal.toFixed(2).replace('.', ',')}\n`;
+                message += `*Taxa de Entrega:* R$ ${deliveryFee.toFixed(2).replace('.', ',')} (${bairroNome})\n`;
+                message += `*TOTAL:* R$ ${totalPedido.toFixed(2).replace('.', ',')}\n`;
+                message += "----------------------------\n\n";
+                
+                message += `📍 *Endereço:*\n${address}\n\n`;
+                message += `💳 *Pagamento:* ${paymentMethod}\n`;
+
+                if (paymentMethod === "Dinheiro" && troco !== "") {
+                    message += `(Preciso de troco para: ${troco})\n`;
+                }
+
+                if(observacoes) {
+                    message += `\n📝 *Observações:*\n${observacoes}\n`;
+                }
+
+                const encodedMessage = encodeURIComponent(message);
+                window.open(`https://wa.me/${seuNumeroWhatsApp}?text=${encodedMessage}`, '_blank');
+            });
+        });
+    </script>
+</body>
+</html>
