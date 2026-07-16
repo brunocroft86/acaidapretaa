@@ -119,9 +119,38 @@
         .cart-float:hover { transform: scale(1.1); }
         #cart-count { position: absolute; top: -2px; right: -2px; background: var(--primary-color); color: var(--light-color); font-size: 0.85rem; font-weight: 900; width: 26px; height: 26px; border-radius: 50%; display: flex; justify-content: center; align-items: center; border: 2px solid var(--bg-color); }
 
-        /* Modal e Itens do Carrinho */
-        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); backdrop-filter: blur(4px); animation: fadeIn 0.3s ease; }
-        .modal-content { background-color: var(--light-color); margin: 5% auto; padding: 2rem; border-radius: 12px; max-width: 500px; width: 95%; max-height: 90vh; overflow-y: auto; position: relative; }
+        /* ========================================= */
+        /* == AJUSTE DEFINITIVO DO MODAL CARRINHO == */
+        /* ========================================= */
+        .modal { 
+            display: none; 
+            position: fixed; 
+            z-index: 2000; 
+            left: 0; 
+            top: 0; 
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0,0,0,0.5); 
+            backdrop-filter: blur(4px); 
+            animation: fadeIn 0.3s ease; 
+            
+            /* A ROLAGEM AGORA FICA AQUI FORA (impede o botão de sumir) */
+            overflow-y: auto; 
+            padding: 2rem 10px; /* Margem superior e inferior livre */
+            box-sizing: border-box;
+        }
+        
+        .modal-content { 
+            background-color: var(--light-color); 
+            margin: 0 auto; 
+            padding: 2rem; 
+            border-radius: 12px; 
+            max-width: 500px; 
+            width: 100%; 
+            position: relative; 
+            /* Foi retirado o max-height e overflow-y daqui para ele crescer livre */
+        }
+
         .modal-close { color: #999; position: absolute; top: 1rem; right: 1.5rem; font-size: 2rem; font-weight: bold; cursor: pointer; }
         .modal-content h2 { text-align: center; color: var(--primary-color); margin-bottom: 1.5rem; }
         
@@ -165,7 +194,7 @@
             /* Hamburger Menu Lógica p/ Tablet/Celular */
             .hamburger { display: block; }
             .category-nav { 
-                display: none; /* Esconde o menu de categorias padrão */
+                display: none; 
                 flex-direction: column; 
                 position: absolute; 
                 top: 100%; 
@@ -188,10 +217,8 @@
         }
 
         @media (max-width: 480px) {
-            /* Garante que o texto NUNCA cole na tela lateral */
             .container { padding: 0 20px; } 
 
-            /* Header com Logo e Hamburger na mesma linha */
             .main-header { padding: 0.8rem 0; }
             .main-header .container { flex-direction: row; justify-content: space-between; align-items: center; }
             .logo { font-size: 1.5rem; }
@@ -212,7 +239,7 @@
             
             .menu-card img { 
                 width: 100%;
-                aspect-ratio: 1 / 1; /* Força o formato quadrado e impede cortes */
+                aspect-ratio: 1 / 1; 
                 height: auto;
                 object-fit: contain; 
                 background-color: #f4f4f4; 
@@ -226,7 +253,6 @@
             .price { font-size: 1.1rem; }
             .btn { padding: 0.5rem 0.8rem; font-size: 0.9rem; }
 
-            /* Grid 2 colunas para complementos */
             #copos .menu-grid, 
             #garrafinhas .menu-grid, 
             #acompanhamentos .menu-grid, 
@@ -246,9 +272,12 @@
                 text-align: center; padding: 0.6rem; font-size: 0.85rem; border-radius: 8px; 
             }
 
-            .modal-content { margin: 5% auto; padding: 1.2rem; width: 95%; border-radius: 8px; }
+            /* Correção do Modal Mobile */
+            .modal { padding: 1rem; }
+            .modal-content { margin: 0 auto; padding: 1.5rem 1rem; width: 100%; border-radius: 8px; }
             .modal-content h2 { font-size: 1.4rem; margin-bottom: 1rem; }
             .modal-close { top: 0.8rem; right: 1rem; font-size: 1.8rem; }
+            
             .cart-item { flex-direction: column; align-items: flex-start; gap: 8px; padding: 0.8rem 0; }
             .cart-item-name { font-size: 0.95rem; }
             .qty-controls { align-self: flex-end; padding: 2px 8px; }
@@ -269,7 +298,6 @@
 </head>
 <body>
 
-    <!-- O Header agora envolve a Navegação para o Dropdown funcionar bem -->
     <div class="header-wrapper">
         <header class="main-header">
             <div class="container">
